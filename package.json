@@ -1,0 +1,17 @@
+{
+  "name": "@gcp-integ-nodejs/translation-app",
+  "version": "0.1.0",
+  "description": "A GCF App that translates input using Google Translate API.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "artifactregistry-login": "npx google-artifactregistry-auth"
+  },
+  "dependencies": {
+    "@google-cloud/translate": "^6.2.6"
+  },
+  "devDependencies": {
+    "google-artifactregistry-auth": "2.1.1"
+  },
+  "author": "hzyi@google.com",
+  "license": "MIT"
+}
