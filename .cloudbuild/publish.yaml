@@ -1,0 +1,7 @@
+steps:
+- name: gcr.io/cloud-builders/npm
+  args: ['ci']
+- name: gcr.io/cloud-builders/npm
+  args: ['run', 'artifactregistry-login', '.npmrc']
+- name: gcr.io/cloud-builders/npm
+  args: ['publish']
