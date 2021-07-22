@@ -1,16 +1,25 @@
 const {TranslationServiceClient} = require('@google-cloud/translate');
 
 const translationClient = new TranslationServiceClient();
-const projectId = 'hanzhenyi2';
+const projectResName = 'projects/hanzhenyi-test';
 
-export async function translateText(srcLang, tarLang, text) {
+async function translateText(srcLang, tarLang, text) {
 	const request = {
-		parent: `projects/{}`,
+		parent: projectResName,
 		contents: [text],
 		mimeType: 'text/plain',
 		sourceLanguageCode: srcLang,
 		targetLanguageCode: tarLang,
 	};
-	const [resp] = await translationClient.translateText(request);
-	return resp.translations[0].translateText;
+	try {
+		const [resp, err] = await translationClient.translateText(request);
+		return resp.translations[0].translatedText;
+	}
+	catch (err) {
+		return err.message;
+	}
+}
+
+module.exports = {
+	translateText
 }
