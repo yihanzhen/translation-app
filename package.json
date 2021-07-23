@@ -1,6 +1,6 @@
 {
   "name": "@gcp-integ-nodejs/translation-app",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A GCF App that translates input using Google Translate API.",
   "main": "./src/translate.js",
   "scripts": {
